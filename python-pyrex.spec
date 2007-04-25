@@ -15,6 +15,7 @@ License:	Public Domain
 Group:		Development/Python
 Obsoletes:      pyrex
 BuildRequires:	python-devel
+BuildRequires:	python-numeric-devel
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
