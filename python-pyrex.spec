@@ -1,14 +1,15 @@
 %define module	pyrex
 %define name	python-%{module}
-%define version 0.9.4.1
-%define release %mkrel 5
+%define version 0.9.5.1a
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Version: 	%{version}
 Release: 	%{release}
 Summary: 	Language for Writing Python Extension Modules
 Source:     http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/Pyrex-%{version}.tar.bz2 
-Patch:      pyrex-python-2.5.patch
+#gw for the democracy player: https://develop.participatoryculture.org/trac/democracy/ticket/5645
+Patch: pyrex-0.9.5.1a-remove-pyerr.patch
 URL:		http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 License:	Public Domain
 Group:		Development/Python
@@ -22,12 +23,16 @@ and compiles it into a C extension for Python.
 
 %prep
 %setup -q -n Pyrex-%{version} 
-%patch
+%patch -p0
 
 %install
 rm -rf %{buildroot}
 python setup.py install --root=%{buildroot}
 install -m 644 Tools/pyrex-mode.el -D %{buildroot}%{_datadir}/emacs/site-lisp/pyrex-mode.el
+
+%check
+cd Demos
+PYTHONPATH=`pwd`/../build/lib make test clean
 
 %clean
 rm -rf %{buildroot}
@@ -38,10 +43,11 @@ rm -rf %{buildroot}
 %_bindir/pyrexc
 %dir %py_puresitedir/Pyrex
 %py_puresitedir/Pyrex/*.py*
-%py_puresitedir/Pyrex/Compiler/*
-%py_puresitedir/Pyrex/Distutils/*
-%py_puresitedir/Pyrex/Mac/*
-%py_puresitedir/Pyrex/Plex/*
+%py_puresitedir/Pyrex/Compiler/
+%py_puresitedir/Pyrex/Distutils/
+%py_puresitedir/Pyrex/Mac/
+%py_puresitedir/Pyrex/Plex/
+%py_puresitedir/Pyrex/Unix/
 %if %mdkversion > 200700
 %py_puresitedir/Pyrex*.egg-info
 %endif
