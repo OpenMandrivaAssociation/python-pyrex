@@ -16,6 +16,7 @@ Group:		Development/Python
 Obsoletes:      pyrex
 BuildRequires:	python-devel
 BuildRequires:	python-numeric-devel
+BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 Pyrex lets you write code that mixes Python and C data types any way you want,
