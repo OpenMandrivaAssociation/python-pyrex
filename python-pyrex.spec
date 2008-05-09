@@ -1,20 +1,21 @@
 %define module	pyrex
 %define name	python-%{module}
-%define version 0.9.6.4
+%define version 0.9.7
 %define release %mkrel 1
 
 Name: 	 	%{name}
 Version: 	%{version}
 Release: 	%{release}
 Summary: 	Language for Writing Python Extension Modules
-Source:     	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/Pyrex-%{version}.tar.bz2 
+Source:     	Pyrex-%{version}.tar.lzma 
 URL:		http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 License:	Public Domain
 Group:		Development/Python
 Obsoletes:      pyrex
-BuildRequires:	python-devel
-BuildRequires:	python-numeric-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Requires:	python
+BuildRequires:	python-devel, python-numeric-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildArch:	noarch
 
 %description
 Pyrex lets you write code that mixes Python and C data types any way you want,
