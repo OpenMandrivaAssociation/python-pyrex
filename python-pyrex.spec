@@ -1,6 +1,6 @@
 %define module	pyrex
 %define name	python-%{module}
-%define version 0.9.7
+%define version 0.9.7.1
 %define release %mkrel 1
 
 Name: 	 	%{name}
