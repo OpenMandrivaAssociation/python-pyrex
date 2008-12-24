@@ -1,7 +1,7 @@
 %define module	pyrex
 %define name	python-%{module}
 %define version 0.9.8.5
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: 	Language for Writing Python Extension Modules
 Name: 	 	%{name}
