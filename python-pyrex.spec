@@ -1,7 +1,7 @@
 %define module	pyrex
 %define name	python-%{module}
 %define version 0.9.8.5
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: 	Language for Writing Python Extension Modules
 Name: 	 	%{name}
@@ -15,7 +15,6 @@ Obsoletes:      pyrex
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	python
 BuildRequires:	python-devel
-BuildRequires:	python-numeric-devel
 BuildRequires:	dos2unix, emacs
 BuildArch:	noarch
 
@@ -38,9 +37,9 @@ emacs -batch -f batch-byte-compile pyrex-mode.el
 %__install -m 644 pyrex-mode.el* %{buildroot}%{_sysconfdir}/emacs/site-start.d
 popd
 
-%check
-cd Demos
-PYTHONPATH=`pwd`/../build/lib make test clean
+#%check
+#cd Demos
+#PYTHONPATH=`pwd`/../build/lib make test clean
 
 %clean
 %__rm -rf %{buildroot}
