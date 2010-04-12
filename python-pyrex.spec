@@ -29,7 +29,7 @@ and compiles it into a C extension for Python.
 %__rm -rf %{buildroot}
 find -name .*hg* | xargs rm -rf
 
-%__python setup.py install --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILELIST
 pushd Tools
 dos2unix pyrex-mode.el
 emacs -batch -f batch-byte-compile pyrex-mode.el
