@@ -1,6 +1,6 @@
 %define module	pyrex
 %define name	python-%{module}
-%define version 0.9.8.6
+%define version 0.9.9
 %define release %mkrel 1
 
 Summary: 	Language for Writing Python Extension Modules
@@ -9,7 +9,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source:     	Pyrex-%{version}.tar.gz
 URL:		http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
-License:	Public Domain
+License:	Apache License
 Group:		Development/Python
 Obsoletes:      pyrex
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
