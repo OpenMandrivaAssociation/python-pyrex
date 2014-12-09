@@ -11,7 +11,7 @@ Source0:	Pyrex-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	dos2unix
 BuildRequires:	emacs
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 Obsoletes:	pyrex
 Requires:	python
 
@@ -25,7 +25,7 @@ and compiles it into a C extension for Python.
 %install
 find -name .*hg* | xargs rm -rf
 
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE= %__python2 setup.py install --root=%{buildroot} --record=FILELIST
 pushd Tools
 dos2unix pyrex-mode.el
 emacs -batch -f batch-byte-compile pyrex-mode.el
