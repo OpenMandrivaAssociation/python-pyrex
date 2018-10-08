@@ -25,7 +25,7 @@ and compiles it into a C extension for Python.
 %install
 find -name .*hg* | xargs rm -rf
 
-PYTHONDONTWRITEBYTECODE= %__python2 setup.py install --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE=  %__python2 setup.py install --root=%{buildroot}
 pushd Tools
 dos2unix pyrex-mode.el
 emacs -batch -f batch-byte-compile pyrex-mode.el
@@ -33,11 +33,10 @@ install -m 755 -d %{buildroot}%{_sysconfdir}/emacs/site-start.d
 install -m 644 pyrex-mode.el* %{buildroot}%{_sysconfdir}/emacs/site-start.d
 popd
 
-#%check
-#cd Demos
-#PYTHONPATH=`pwd`/../build/lib make test clean
-
-%files -f FILELIST
+%files
 %doc *.txt Demos Doc
+%{py_puresitedir}/Pyrex
+%{py_puresitedir}/Pyrex*egg-info
+%{_bindir}/pyrexc
 %{_sysconfdir}/emacs/site-start.d/*.el*
 
