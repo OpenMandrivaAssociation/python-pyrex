@@ -3,7 +3,7 @@
 Summary:	Language for Writing Python Extension Modules
 Name:		python-%{module}
 Version:	0.9.9
-Release:	14
+Release:	15
 License:	Apache License
 Group:		Development/Python
 Url:		http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
