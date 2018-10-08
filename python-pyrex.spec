@@ -13,7 +13,7 @@ BuildRequires:	dos2unix
 BuildRequires:	emacs
 BuildRequires:	pkgconfig(python2)
 Obsoletes:	pyrex
-Requires:	python
+Requires:	python2
 
 %description
 Pyrex lets you write code that mixes Python and C data types any way you want,
@@ -35,8 +35,8 @@ popd
 
 %files
 %doc *.txt Demos Doc
-%{py_puresitedir}/Pyrex
-%{py_puresitedir}/Pyrex*egg-info
+%{py2_puresitedir}/Pyrex
+%{py2_puresitedir}/Pyrex*egg-info
 %{_bindir}/pyrexc
 %{_sysconfdir}/emacs/site-start.d/*.el*
 
