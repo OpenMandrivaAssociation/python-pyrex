@@ -6,7 +6,7 @@ Version:	0.9.9
 Release:	17
 License:	Apache License
 Group:		Development/Python
-Url:		http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
+Url:		https://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 Source0:	Pyrex-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	dos2unix
